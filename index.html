@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Opening…</title>
+<style>
+  body{margin:0;min-height:90vh;display:flex;align-items:center;justify-content:center;padding:24px;
+    font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#4b5563;text-align:center;background:#f3f5f8}
+  a{color:#1d4ed8;font-weight:600}
+</style>
+</head>
+<body>
+<div id="msg">Opening…</div>
+<script>
+/*
+ * Permanent short links for Volunteer Hub (MIT License).
+ * Stickers and shared links point here; config.json says where they go today.
+ *   ?b=042&sv=1   badge sticker  -> <target>?b=042&sv=1&src=nfc&dv=<label>   (sv defaults to config stickerVersion)
+ *   ?p=KEY        volunteer page -> <target>?p=KEY
+ *   ?c=CODE       staff sign-in  -> <target>?c=CODE
+ *   ?go=name      named link     -> links[name] in config.json
+ * Any other parameters are passed through unchanged.
+ */
+(function () {
+  'use strict';
+  var box = document.getElementById('msg');
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function fail(text) { box.innerHTML = esc(text) + '<br><br><a href="" onclick="location.reload();return false">Try again</a>'; }
+  function redirect(url) {
+    location.replace(url);
+    setTimeout(function () { box.innerHTML = '<a href="' + esc(url) + '">Tap here if nothing happens</a>'; }, 2500);
+  }
+
+  // A fresh copy at most once a minute (GitHub Pages caches files for ~10 minutes).
+  var bust = Math.floor(Date.now() / 60000);
+  fetch('config.json?v=' + bust, { cache: 'no-store' })
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(route)
+    .catch(function (e) { fail('Couldn’t load the link settings (' + e.message + ').'); });
+
+  function route(cfg) {
+    var q = new URLSearchParams(location.search);
+
+    if (q.has('go')) {
+      var name = String(q.get('go') || '').toLowerCase();
+      var dest = cfg.links && cfg.links[name];
+      if (!dest || !/^https?:\/\//.test(dest)) { fail('Unknown link “' + name + '”.'); return; }
+      redirect(dest);
+      return;
+    }
+
+    var badge = q.get('b');
+    var target = (badge && cfg.badgeOverrides && cfg.badgeOverrides[badge]) || cfg.target;
+    if (!target || !/^https:\/\//.test(target) || /PASTE_/.test(target)) { fail('No destination is set in config.json yet.'); return; }
+
+    var out = new URL(target);
+    q.forEach(function (v, k) { out.searchParams.set(k, v); });
+    if (badge) {
+      if (!q.has('src')) out.searchParams.set('src', 'nfc');
+      if (!q.has('sv')) out.searchParams.set('sv', String(cfg.stickerVersion || 1));
+      if (cfg.label && !q.has('dv')) out.searchParams.set('dv', String(cfg.label));
+    }
+    redirect(out.toString());
+  }
+})();
+</script>
+</body>
+</html>

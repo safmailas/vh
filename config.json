@@ -1,0 +1,10 @@
+{
+  "target": "https://script.google.com/macros/s/PASTE_YOUR_DEPLOYMENT_ID/exec",
+  "label": "hub-v3",
+  "stickerVersion": 1,
+  "updated": "2026-11-18",
+  "links": {
+    "training": "https://meet.google.com/abc-defg-hij"
+  },
+  "badgeOverrides": {}
+}
