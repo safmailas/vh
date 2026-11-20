@@ -1,7 +1,11 @@
-# Volunteer Hub — permanent short links
+# Volunteer Hub — permanent short links + the app
 
-Static redirect site (MIT). NFC stickers, attendee tickets and shared links point here, and `config.json` decides where they land
+Static site (MIT). NFC stickers, QR labels, attendee tickets and shared links point here, and `config.json` decides where they land
 today. When the app moves to a new deployment, edit one line — no sticker ever needs rewriting.
+
+**v4:** the app itself lives in `app/` (`https://<you>.github.io/vh/app/`). It runs as an ordinary web page, so the phone camera
+works, and talks to your Apps Script hub through `config.json → "api"`. Point `"target"` at `…/vh/app/` and every link opens it.
+The video guides are in `app/guides/`.
 
 | Link | Goes to |
 |---|---|
@@ -45,7 +49,8 @@ minute. In the app, **Stickers & links → Check redirect** confirms the redirec
 
 | Field | Meaning |
 |---|---|
-| `target` | Where links go: your Volunteer Hub Web app URL (`…/exec`). |
+| `target` | Where links go: the app (`https://<you>.github.io/vh/app/`), or a Web app URL (`…/exec`) as before v4. |
+| `api` | v4: the Apps Script Web app URL (`…/exec`, a v4 deployment) the app on this site talks to. |
 | `label` | Free text recorded with each sticker scan, e.g. `hub-v3`. Bump it when you switch deployments. |
 | `stickerVersion` | Format version of the stickers you write (keep `1` unless the link format changes). |
 | `updated` | Date you last changed this file (for your records). |

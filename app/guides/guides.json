@@ -1,0 +1,68 @@
+[
+ {
+  "id": "badges",
+  "title": "Hand out & take back badges",
+  "sub": "Scan, type or tap",
+  "tab": "desk",
+  "file": "badges.mp4",
+  "poster": "badges.jpg",
+  "secs": 55
+ },
+ {
+  "id": "people",
+  "title": "People & follow-ups",
+  "sub": "Find anyone, chase badges not back",
+  "tab": "people",
+  "file": "people.mp4",
+  "poster": "people.jpg",
+  "secs": 40
+ },
+ {
+  "id": "setup",
+  "title": "Setting up",
+  "sub": "Features, badges, QR labels, import, access",
+  "tab": "more",
+  "file": "setup.mp4",
+  "poster": "setup.jpg",
+  "secs": 64
+ },
+ {
+  "id": "event-day",
+  "title": "Event day, start to finish",
+  "sub": "Coordinator, badge desk and volunteers",
+  "wide": true,
+  "file": "event-day.mp4",
+  "poster": "event-day.jpg",
+  "secs": 84
+ },
+ {
+  "id": "events",
+  "title": "Events & shifts",
+  "sub": "Plan shifts, see who’s arriving",
+  "tab": "events",
+  "feature": "events",
+  "file": "events.mp4",
+  "poster": "events.jpg",
+  "secs": 32
+ },
+ {
+  "id": "door",
+  "title": "Attendee check-in",
+  "sub": "Tickets, walk-ins and hand-outs",
+  "tab": "door",
+  "feature": "door",
+  "file": "door.mp4",
+  "poster": "door.jpg",
+  "secs": 24
+ },
+ {
+  "id": "comms",
+  "title": "Announcements & meetings",
+  "sub": "Reach volunteers, see who read it",
+  "tab": "comms",
+  "feature": "comms",
+  "file": "comms.mp4",
+  "poster": "comms.jpg",
+  "secs": 23
+ }
+]
