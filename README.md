@@ -9,7 +9,7 @@ The video guides are in `app/guides/`.
 
 **4.1 and 4.2** run as separate instances in `v41/` and `v42/`, each with its own `config.json` (`api` = that
 instance's Apps Script link). 4.2 adds Google sign-in (through the separate `signin` site) and plays the videos from
-`app/guides/`, so keep that folder.
+`app/guides/`, so keep that folder. Short links now open 4.2: `target` = `…/vh/v42/app/`, `api` = the 4.2 hub.
 
 | Link | Goes to |
 |---|---|

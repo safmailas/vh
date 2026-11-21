@@ -1,9 +1,9 @@
 {
-  "target": "https://script.google.com/macros/s/AKfycbyJuDc8F6Q112WVJehUsbYYtGrWwMYgd9EHh2Xcllrb0eEss-ByU-OblcXkZZyXHd5TmQ/exec",
-  "api": "",
-  "label": "hub-v3",
+  "target": "https://safmailas.github.io/vh/v42/app/",
+  "api": "https://script.google.com/macros/s/AKfycbwDgrPHGucP-1dvHDfe7l0yS2xyIQ3hLE6VkwYi29pzwDjmAI7R6JsU0EgWRCY9VnOQbg/exec",
+  "label": "hub-v4.2",
   "stickerVersion": 1,
-  "updated": "2026-11-18",
+  "updated": "2026-11-21",
   "links": {
     "training": "https://meet.google.com/abc-defg-hij"
   },
