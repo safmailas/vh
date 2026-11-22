@@ -1,9 +1,9 @@
 {
-  "target": "https://safmailas.github.io/vh/v42/app/",
+  "target": "https://safmailas.github.io/vh/v43/app/",
   "api": "https://script.google.com/macros/s/AKfycbwDgrPHGucP-1dvHDfe7l0yS2xyIQ3hLE6VkwYi29pzwDjmAI7R6JsU0EgWRCY9VnOQbg/exec",
-  "label": "hub-v4.2",
+  "label": "hub-v4.3",
   "stickerVersion": 1,
-  "updated": "2026-11-21",
+  "updated": "2026-11-22",
   "links": {
     "training": "https://meet.google.com/abc-defg-hij"
   },

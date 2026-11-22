@@ -9,7 +9,12 @@ The video guides are in `app/guides/`.
 
 **4.1 and 4.2** run as separate instances in `v41/` and `v42/`, each with its own `config.json` (`api` = that
 instance's Apps Script link). 4.2 adds Google sign-in (through the separate `signin` site) and plays the videos from
-`app/guides/`, so keep that folder. Short links now open 4.2: `target` = `…/vh/v42/app/`, `api` = the 4.2 hub.
+`app/guides/`, so keep that folder.
+
+**4.3** (`v43/`, its own `config.json`) is the latest, and short links open it: `target` = `…/vh/v43/app/`. It adds a
+ring while a hand-out saves, badges with no number, swap / move / handed in by someone else, correcting times,
+sortable lists, and writing or exporting chosen badges' sticker links. The badge features that change records need
+the 4.3 hub (`api`); on an older hub the app hides them. To go back, set `target` to `…/vh/v42/app/`.
 
 | Link | Goes to |
 |---|---|
